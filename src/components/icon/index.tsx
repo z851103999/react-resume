@@ -1,4 +1,4 @@
-import React, { ReactChildren } from "react";
+import React from "react";
 import { Svg, Path } from "@react-pdf/renderer";
 import { styles as s } from "../preview/style";
 
@@ -14,6 +14,7 @@ export default function Icon({
   style?: any;
 }) {
   return (
+    // @ts-ignore
     <Svg style={style} viewBox="0 0 24 24">
       <Path fill={fill} stroke={color} d={d}></Path>
     </Svg>
@@ -22,6 +23,7 @@ export default function Icon({
 
 export function IconGithub({ color = "#fff" }: { color?: string }) {
   return (
+    // @ts-ignore
     <Svg style={s.profile_icon} viewBox="0 0 16 16">
       <Path
         fill="none"
@@ -34,6 +36,7 @@ export function IconGithub({ color = "#fff" }: { color?: string }) {
 
 export function IconLocation({ color = "#fff" }: { color?: string }) {
   return (
+    // @ts-ignore
     <Svg style={s.profile_icon} viewBox="0 0 24 24">
       <Path
         fill="none"
@@ -51,6 +54,7 @@ export function IconLocation({ color = "#fff" }: { color?: string }) {
 
 export function IconAcademicCap({ color = "#fff" }: { color?: string }) {
   return (
+    // @ts-ignore
     <Svg style={s.profile_icon} viewBox="0 0 24 24">
       <Path fill="none" stroke={color} d="M12 14l9-5-9-5-9 5 9 5z"></Path>
       <Path
@@ -75,6 +79,7 @@ export function IconStar({
   color?: string;
 }) {
   return (
+    // @ts-ignore
     <Svg style={s.profile_icon} viewBox="0 0 24 24">
       <Path
         fill={active ? color : "#f0f0f0"}
