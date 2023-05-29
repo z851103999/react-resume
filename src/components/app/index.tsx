@@ -10,13 +10,19 @@ import {
 } from "../../context/resumeContext";
 import Editor from "../editor";
 import Preview from "../preview";
+// import JSONbig from 'json-bigint';
 
 type Props = {};
 
 export default function App({ }: Props) {
   let initial = initialState;
   try {
-    const local = JSON.parse(localStorage.getItem("refuseme_data"));
+    const local = JSON.parse(localStorage.getItem("refuseme_data"), (key, value) => {
+      typeof value === 'bigint'
+        ? value.toString()
+        : value
+    });
+    console.log(local)
     if (local) {
       initial = local;
     }

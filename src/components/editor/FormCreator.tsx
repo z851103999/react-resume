@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { map , get } from 'lodash'
-import { Form, Input, InputNumber, Button, Switch, Card, Radio } from "antd";
+import { Form, Input, InputNumber, Button, Switch, Card, Radio,Space } from "antd";
 import { FormItemProps } from "antd/lib/form";
 import { DeleteOutlined } from "@ant-design/icons";
 import { themes } from "./config";
@@ -43,7 +43,7 @@ function Range({
     onChange([value[0], v]);
   };
   return (
-    <Input.Group compact>
+    <Space.Compact>
       <Input
         onChange={(e) => handleChange(e.target.value, 0)}
         style={{ width: "50%" }}
@@ -54,7 +54,7 @@ function Range({
         style={{ width: "50%" }}
         value={value[1]}
       />
-    </Input.Group>
+    </Space.Compact>
   );
 }
 
@@ -76,7 +76,7 @@ const FormItemComponentMap = (type: string) => (props: FProps) => {
     case "input":
       return <Input {...props} />;
     case "number":
-      return <InputNumber {...props} />;
+      return <InputNumber {...props} min={1} max={5} />;
     case "textarea":
       return <Input.TextArea rows={4} {...props} />;
     case "range":
