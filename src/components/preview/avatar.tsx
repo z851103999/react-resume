@@ -22,7 +22,7 @@ export default function Avatar({ data }: Props){
 	}
 	return (
 		<View style={s.avatar_warpper}>
-			<Image style={data.circle ? s.avatar : s.avatar_rect } src={data.url} />
+			<Image style={data.circle ? s.avatar : s.avatar_rect } src={data.url}  />
 		</View>
 	)
 }
